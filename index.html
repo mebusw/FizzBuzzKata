@@ -1,70 +1,63 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Fizz Buzz TDD Kata</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"></link>
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Fizzbuzzkata : " />
+        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <style>
+            body {
+                padding: 1em;
+            }
+        </style>
+        <script type="text/javascript">
+            //Use http://asaph.org/gravatar/ to generate gravatar image url
+            var spCheckCurrent = "JosephYao";
+            var spCheckPlayers = [
+                {name: "mebusw", imgUrl:"http://www.gravatar.com/avatar/e2ecc51e27d5fd3843cc629c763c3ef8.jpg?s=64"},
+                {name: "gejo", imgUrl:"https://identicons.github.com/8b865520fd8fc69690ed08c5a15c8f9e.png"},
+                {name: "wubin28", imgUrl:"http://www.gravatar.com/avatar/45fd9d4ade320df61b9f32167375838b.jpg"},
+                {name: "zbcjackson", imgUrl:"http://www.gravatar.com/avatar/7b687090ba257bb1205c73e7e03b0527.png"},
+                {name: "JosephYao", imgUrl:"http://www.gravatar.com/avatar/e2c78faae9bc14272d953d02df562e9e.jpg?s=64"}
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+            ];
 
-    <title>Fizzbuzzkata</title>
-  </head>
-
-  <body>
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/mebusw/FizzBuzzKata">View on GitHub</a>
-
-          <h1 id="project_title">Fizzbuzzkata</h1>
-          <h2 id="project_tagline"></h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/mebusw/FizzBuzzKata/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/mebusw/FizzBuzzKata/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="status-httpmebuswgithubiofizzbuzzkata" class="anchor" href="#status-httpmebuswgithubiofizzbuzzkata"><span class="octicon octicon-link"></span></a>Status: <a href="http://mebusw.github.io/FizzBuzzKata/">http://mebusw.github.io/FizzBuzzKata/</a>
-</h3>
-
-<h3>
-<a name="here-is-the-problem-description" class="anchor" href="#here-is-the-problem-description"><span class="octicon octicon-link"></span></a>Here is the problem description:</h3>
-
-<p>假如您是一个程序员，要实现一个FizzBuzz的游戏。FizzBuzz是国外小学里老师和孩子们一起玩的游戏。下课前5分钟，老师让孩子们站成一个圈，然后用手指指着第一个孩子，第一个孩子要迅速地说“1”；接着老师快速地指第二个孩子，第二个孩子要迅速说“2”；依次类推，每个被老师指到的孩子要迅速地递增报数。而且，如果孩子遇到3的倍数，就不能说数字，而要说“Fizz”；如果遇到5的倍数，则要说“Buzz”；如果既是3又是5的倍数，则要说“FizzBuzz”。说错或反应慢的孩子就不能再继续游戏。看谁能坚持一直游戏到最后。这是一个很锻炼乘法心算和反应能力的游戏。</p>
-
-<p>您作为程序员，已经按照项目组里的产品需求专家垒君交代的上述需求实现了这个游戏。有一天，垒君找到您，说：“咱们的CEO侨部思在昨天他休4周长假之前跟我说，为了提升咱们这个游戏的趣味性和难度，需要增加一个功能，就是当孩子说Fizz、Buzz或FizzBuzz时，还要同时用手摸自己身体的一个部位。具体摸哪里，侨部思说现在还没想好，他需要时间考虑一下，不过在他休假期间，他说咱们暂时先这样实现：说Fizz同时摸头顶，说Buzz同时摸肩膀，说FizzBuzz同时摸膝盖。等4周他休假回来后，再根据他的最终想法确定该功能。他特意交代，在他休假期间的那次产品发布，不能把这个未完成的功能展示给用户。”</p>
-
-<p>根据您以往的经验，如果用创建分支再合并的方法来完成该功能，会费时费力。为了便于公司正在进行的持续集成和交付，您打算在代码主干上运用特征（Feature Toggle）开关的方法来解决这个问题。</p>
-
-<p>您查阅了下面有关特征开关的一些文章，打算尝试Proxy设计模式来实现特性开关，并试图做到当新功能开发到一半时：1）若特性开关关闭，原有功能和原有测试能够正常运行；2）若特性开关打开，原有功能、原有测试、新功能和新测试都能够正常运行；3）当新功能开发完成并上线前，能方便地移除特性开关。</p>
-
-<ul>
-<li>Martin Fowler - Feature Toggle: <a href="http://martinfowler.com/bliki/FeatureToggle.html">http://martinfowler.com/bliki/FeatureToggle.html</a>
-</li>
-<li>路宁 - 特性开关问与答: <a href="http://www.luning.name/post/2013-01-17/feature-toggle-faq">http://www.luning.name/post/2013-01-17/feature-toggle-faq</a> </li>
-<li>孟宇 - 在项目中透明地引入特性开关: <a href="http://www.infoq.com/cn/articles/introducing-characteristics-switch-in-project-transparently#rd?sukey=abc050baad029375fe4fc74465447381fc3dfbf0282db3b7a75428d15d780b7bbeb32fbc952743b95e8d2181132f8a8c#3970668-tsina-1-13950-4940258fac58681d93622513463cbd0b">http://www.infoq.com/cn/articles/introducing-characteristics-switch-in-project-transparently#rd?sukey=abc050baad029375fe4fc74465447381fc3dfbf0282db3b7a75428d15d780b7bbeb32fbc952743b95e8d2181132f8a8c#3970668-tsina-1-13950-4940258fac58681d93622513463cbd0b</a>
-</li>
-</ul>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Fizzbuzzkata maintained by <a href="https://github.com/mebusw">mebusw</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
-  </body>
+            $(document).ready(function() {
+                TennisTable(spCheckPlayers, spCheckCurrent).render("#spCheckTurns");
+                TennisTable(pokerPlayers, pokerCurrent).render("#pokerTurns");
+            });
+        </script>
+    </head>
+    <body>
+        <h2>Tennis TDD Java</h2>
+        <h3>Rules</h3>
+        <ol>
+            <li>This is a TDD Kata. A player have to solve the failing test(s) without breaking the previous tests, then write another failing test for the next player.</li>
+            <li>Player's turn is circulated as in the player list in next section.</li>
+            <li>Code is the primary langauge. if that fails, uses English.</li>
+            <li>Anyone interested, please join by creating <a href="https://github.com/mebusw/FizzBuzzKata/issues">an issue in github. I will add you to committers</a></li>
+        </ol>
+        <h3>How to play and take turns</h3>
+        <ul>
+            <li>Red -> Green -> Refactor</li>
+            <li>Edit this index.html page, line 16 to point to next player. (<a href="https://github.com/mebusw/FizzBuzzKata/edit/gh-pages/index.html">here</a>)</li>
+            <li>Checks-in/merge code. (pull requests are fine, but please merge them in by yourself. it's faster that way so that you don't have to wait for me to merge.)</li>
+            <li>check that red circle should be on next player</li>
+            <li>check that only your intended tests are failing</li>
+            <li>Notify next player in the disccusion thread in wechat (see qr at end of page)</li>
+        </ul>
+        <div style="float:left; width: 450px;;">
+            <h3>Fizz Buzz Kata</h3>
+            <ul>
+                <li><a href="https://github.com/mebusw/FizzBuzzKata/tree/master">Source &amp; Specification</a></li>
+            </ul>
+            <svg id="spCheckTurns"></svg>
+        </div>
+        <div style="clear: left"></div>
+        <img src="https://f.cloud.github.com/assets/1692735/2134146/7176d38a-92d8-11e3-9d0c-6f84fb61f390.png">
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <script src="tennis.js"></script>
+    </body>
 </html>
