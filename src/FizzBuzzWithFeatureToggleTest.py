@@ -2,7 +2,7 @@ import unittest
 
 
 class FizzBuzzWithFeatureToggleTest(unittest.TestCase):
-    def testCountOff(self):
+    def test_when_3_then_Fizz(self):
         self.assertEqual(1, FizzBuzz().countOff(1))
         self.assertEqual(2, FizzBuzz().countOff(2))
         self.assertEqual('Fizz', FizzBuzz().countOff(3))
@@ -10,6 +10,8 @@ class FizzBuzzWithFeatureToggleTest(unittest.TestCase):
 
 class FizzBuzz():
     def countOff(self, n):
+        if (n == 3):
+            return 'Fizz'
         return n
 
 
