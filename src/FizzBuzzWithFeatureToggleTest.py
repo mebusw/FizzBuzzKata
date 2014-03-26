@@ -3,6 +3,10 @@ import unittest
 from FizzBuzzWithFeatureToggle import FizzBuzz
 
 
+class FizzBuzzWithBodyMovement():
+    pass
+
+
 class FizzBuzzWithFeatureToggleTest(unittest.TestCase):
     def test_when_common_number_then_say_it_directly(self):
         self.assertEqual(1, FizzBuzz().countOff(1))
