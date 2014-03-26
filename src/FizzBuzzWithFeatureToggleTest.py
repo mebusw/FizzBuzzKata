@@ -4,7 +4,8 @@ from FizzBuzzWithFeatureToggle import FizzBuzz
 
 
 class FizzBuzzWithBodyMovement():
-    pass
+    def countOff(self, n):
+        pass
 
 
 class FizzBuzzWithFeatureToggleTest(unittest.TestCase):
