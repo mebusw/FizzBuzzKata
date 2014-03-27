@@ -16,8 +16,8 @@ class FizzBuzzWithFeatureToggleTest(unittest.TestCase):
     def test_when_3_then_Fizz(self):
         self.assertEqual('Fizz', FizzBuzz().countOff(3))
 
-    def test_when_3_then_FizzAndTouchHead(self):
-        self.assertEqual('FizzAndTouchHead', FizzBuzzWithBodyMovement().countOff(3))
+    def test_given_body_movement_added_when_3_then_FizzAndTouchHead(self):
+        self.assertEqual('FizzAndTouchHead', FizzBuzz().countOff(3))
 
 
 if __name__ == "__main__":
