@@ -2,11 +2,7 @@ import unittest
 
 from FizzBuzzWithFeatureToggle import FizzBuzz
 
-
-class FizzBuzzWithBodyMovement():
-    def countOff(self, n):
-        pass
-
+import ft
 
 class FizzBuzzWithFeatureToggleTest(unittest.TestCase):
     def test_when_common_number_then_say_it_directly(self):
@@ -14,11 +10,12 @@ class FizzBuzzWithFeatureToggleTest(unittest.TestCase):
         self.assertEqual(2, FizzBuzz().countOff(2))
 
     def test_when_3_then_Fizz(self):
+        ft.featureToggle = False
         self.assertEqual('Fizz', FizzBuzz().countOff(3))
 
-    def test_given_body_movement_added_when_3_then_FizzAndTouchHead(self):
-        self.assertEqual('FizzAndTouchHead', FizzBuzz().countOff(3))
-
+    def test_when_3_then_3_with_feature_toggle(self):
+        ft.featureToggle = True
+        self.assertEqual(3, FizzBuzz().countOff(3))
 
 if __name__ == "__main__":
     unittest.main()
