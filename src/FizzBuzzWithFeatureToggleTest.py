@@ -28,6 +28,9 @@ class FizzBuzzBodyMovementToggleOnTest(unittest.TestCase):
         FizzBuzz.featureToggleBodyMovement = True
         self.assertEqual('FizzAndTouchHead', FizzBuzz().countOff(6))
 
+    def test_when_5_then_Buzz_with_feature_body_movement(self):
+        FizzBuzz.featureToggleBodyMovement = True
+        self.assertEqual('BuzzAndTouchShoulder', FizzBuzz().countOff(5))
 
 if __name__ == "__main__":
     unittest.main()
