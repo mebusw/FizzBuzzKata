@@ -31,6 +31,11 @@ class FizzBuzzBodyMovementToggleOnTest(unittest.TestCase):
     def setUp(self):
         FizzBuzz.featureToggleBodyMovement = True
 
+    def test_given_body_movement_is_on_when_common_number_then_say_it_directly(self):
+        self.assertEqual(1, FizzBuzz().countOff(1))
+        self.assertEqual(49, FizzBuzz().countOff(49))
+        self.assertEqual(98, FizzBuzz().countOff(98))
+
     def test_given_body_movement_is_on_when_multiple_of_3_then_FizzAndTouchHead(self):
         self.assertEqual('FizzAndTouchHead', FizzBuzz().countOff(3))
         self.assertEqual('FizzAndTouchHead', FizzBuzz().countOff(51))
