@@ -6,19 +6,19 @@ class FizzBuzzTestBodyMovementToggleOffTest(unittest.TestCase):
     def setUp(self):
         FizzBuzz.featureToggleBodyMovement = False
 
-    def test_when_common_number_then_say_it_directly(self):
+    def test_given_body_movement_is_off_when_common_number_then_say_it_directly(self):
         self.assertEqual(1, FizzBuzz().countOff(1))
         self.assertEqual(2, FizzBuzz().countOff(2))
 
-    def test_when_multiple_of_3_then_Fizz(self):
+    def test_given_body_movement_is_off_when_multiple_of_3_then_Fizz(self):
         self.assertEqual('Fizz', FizzBuzz().countOff(3))
         self.assertEqual('Fizz', FizzBuzz().countOff(6))
 
-    def test_when_multiple_of_5_then_Buzz(self):
+    def test_given_body_movement_is_off_when_multiple_of_5_then_Buzz(self):
         self.assertEqual('Buzz', FizzBuzz().countOff(5))
         self.assertEqual('Buzz', FizzBuzz().countOff(10))
 
-    def test_when_multiple_of_3_or_5_then_FizzBuzz(self):
+    def test_given_body_movement_is_off_when_multiple_of_3_or_5_then_FizzBuzz(self):
         self.assertEqual('FizzBuzz', FizzBuzz().countOff(15))
         self.assertEqual('FizzBuzz', FizzBuzz().countOff(30))
 
