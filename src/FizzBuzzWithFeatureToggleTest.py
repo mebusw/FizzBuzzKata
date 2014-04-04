@@ -31,9 +31,10 @@ class FizzBuzzBodyMovementToggleOnTest(unittest.TestCase):
         self.assertEqual('FizzAndTouchHead', FizzBuzz().countOff(51))
         self.assertEqual('FizzAndTouchHead', FizzBuzz().countOff(99))
 
-    def test_when_5_then_Buzz_with_feature_body_movement(self):
+    def test_given_body_movement_is_on_when_multiple_of_5_then_BuzzAndTouchShoulder(self):
         self.assertEqual('BuzzAndTouchShoulder', FizzBuzz().countOff(5))
-
+        self.assertEqual('BuzzAndTouchShoulder', FizzBuzz().countOff(100))
+        self.assertEqual('BuzzAndTouchShoulder', FizzBuzz().countOff(50))
 
 
 if __name__ == "__main__":
