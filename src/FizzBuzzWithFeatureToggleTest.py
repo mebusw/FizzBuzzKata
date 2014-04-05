@@ -21,7 +21,7 @@ class FizzBuzzTestBodyMovementToggleOffTest(unittest.TestCase):
         self.assertEqual('Buzz', FizzBuzz().countOff(50))
         self.assertEqual('Buzz', FizzBuzz().countOff(100))
 
-    def test_given_body_movement_is_off_when_multiple_of_3_or_5_then_FizzBuzz(self):
+    def test_given_body_movement_is_off_when_multiple_of_3_and_5_then_FizzBuzz(self):
         self.assertEqual('FizzBuzz', FizzBuzz().countOff(15))
         self.assertEqual('FizzBuzz', FizzBuzz().countOff(45))
         self.assertEqual('FizzBuzz', FizzBuzz().countOff(90))
