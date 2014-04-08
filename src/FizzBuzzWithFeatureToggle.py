@@ -4,10 +4,7 @@ class FizzBuzz():
     
     def count_off(self, n):
         if self.is_fizz(n) and self.is_buzz(n): 
-        	if self.feature_toggle_body_movement:
-        		return 'FizzBuzzAndTouchKnee'
-        	else:
-        		return 'FizzBuzz'
+        	return self.fizzbuzz_text()
         if self.is_fizz(n): 
         	return self.fizz_text()
         if self.is_buzz(n):
@@ -31,3 +28,9 @@ class FizzBuzz():
     		return 'BuzzAndTouchShoulder'
     	else:
     		return 'Buzz'
+
+    def fizzbuzz_text(self):
+    	if self.feature_toggle_body_movement:
+    		return 'FizzBuzzAndTouchKnee'
+    	else:
+    		return 'FizzBuzz'
