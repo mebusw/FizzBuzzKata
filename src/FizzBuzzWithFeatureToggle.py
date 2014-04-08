@@ -1,18 +1,19 @@
 class FizzBuzz():
 	
-    featureToggleBodyMovement = False
+    feature_toggle_body_movement = False
     
-    def countOff(self, n):
-        if (self.isFizz(n) and self.isBuzz(n)): 
+    def count_off(self, n):
+        if (self.is_fizz(n) and self.is_buzz(n)): 
         	return 'FizzBuzz'
-        if (self.isFizz(n)): 
-        	return self.featureToggleBodyMovement and 'FizzAndTouchHead' or 'Fizz'
-        if (self.isBuzz(n)):
-        	return self.featureToggleBodyMovement and 'BuzzAndTouchShoulder' or 'Buzz'
+        if (self.is_fizz(n)): 
+        	return self.feature_toggle_body_movement and 'FizzAndTouchHead' or 'Fizz'
+        if (self.is_buzz(n)):
+        	return self.feature_toggle_body_movement and 'BuzzAndTouchShoulder' or 'Buzz'
         return n
 
-    def isFizz(self, n):
+    def is_fizz(self, n):
     	return n % 3 == 0
 
-    def isBuzz(self, n):
+    def is_buzz(self, n):
     	return n % 5 == 0
+
