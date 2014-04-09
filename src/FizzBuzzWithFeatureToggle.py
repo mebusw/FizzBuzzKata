@@ -6,6 +6,9 @@ class FizzBuzzText():
 	def buzz_text(self):
 		return 'Buzz'
 
+	def fizzbuzz_text(self):
+		return 'FizzBuzz'
+
 class FizzBuzzBodyMovementText():
 
 	def fizz_text(self):
@@ -13,6 +16,9 @@ class FizzBuzzBodyMovementText():
 
 	def buzz_text(self):
 		return 'BuzzAndTouchShoulder'
+
+	def fizzbuzz_text(self):
+		return 'FizzBuzzAndTouchKnee'
 
 class FizzBuzz():
 	
@@ -25,7 +31,7 @@ class FizzBuzz():
     	text = self.create_text()
 
         if self.is_fizz(n) and self.is_buzz(n): 
-        	return self.fizzbuzz_text()
+        	return text.fizzbuzz_text()
         if self.is_fizz(n): 
         	return text.fizz_text()
         if self.is_buzz(n):
@@ -37,10 +43,3 @@ class FizzBuzz():
 
     def is_buzz(self, n):
     	return n % 5 == 0
-
-    def fizzbuzz_text(self):
-    	if self.feature_toggle_body_movement:
-    		return 'FizzBuzzAndTouchKnee'
-    	else:
-    		return 'FizzBuzz'
-
