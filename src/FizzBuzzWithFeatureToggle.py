@@ -24,18 +24,18 @@ class FizzBuzz():
 	
     feature_toggle_body_movement = False
  
-    def create_text(self):
+    def create_text_generator(self):
     	return FizzBuzzBodyMovementText() if self.feature_toggle_body_movement else FizzBuzzText()
 
     def count_off(self, n):
-    	text = self.create_text()
+    	text_generator = self.create_text_generator()
 
         if self.is_fizz(n) and self.is_buzz(n): 
-        	return text.fizzbuzz_text()
+        	return text_generator.fizzbuzz_text()
         if self.is_fizz(n): 
-        	return text.fizz_text()
+        	return text_generator.fizz_text()
         if self.is_buzz(n):
-        	return text.buzz_text()
+        	return text_generator.buzz_text()
         return n
 
     def is_fizz(self, n):
