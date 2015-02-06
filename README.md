@@ -2,6 +2,7 @@ FizzBuzzKata
 ============
 
 ### Status: http://mebusw.github.io/FizzBuzzKata/
+![](https://travis-ci.org/mebusw/FizzBuzzKata.svg)
 
 ### Here is the problem description:
 
